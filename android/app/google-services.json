@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "607145853276",
+    "project_id": "adhikaar-d3f08",
+    "storage_bucket": "adhikaar-d3f08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607145853276:android:4925dde56fa516a0d60199",
+        "android_client_info": {
+          "package_name": "com.example.Adhikaar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607145853276-lretube65rp7n8fo7sicg5m4n2l4tb2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQI4G8jZVlJ-trUeOueg7ZpqJBclyhboA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607145853276-lretube65rp7n8fo7sicg5m4n2l4tb2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
