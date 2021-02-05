@@ -1,6 +1,6 @@
 // TODO Implement this library.
 import 'style.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:flutter/material.dart';
 
 class register extends StatefulWidget {
@@ -195,5 +195,10 @@ class _registerState extends State<register> {
         ],
       ),
     );
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold();
+    }
   }
 }

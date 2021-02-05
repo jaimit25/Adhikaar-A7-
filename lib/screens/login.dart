@@ -1,4 +1,3 @@
-import 'package:Adhikaar/screens/Navigator.dart';
 import 'package:flutter/material.dart';
 import 'style.dart';
 
@@ -76,8 +75,8 @@ class _loginState extends State<login> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) => login()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => login()));
                     },
                     child: Container(
                       color: Colors.grey[50],

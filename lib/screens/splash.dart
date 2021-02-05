@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:Adhikaar/screens/login.dart';
+import 'package:Adhikaar/screens/Navigation.dart';
 import 'package:flutter/material.dart';
 
 class splash extends StatefulWidget {
@@ -13,15 +13,18 @@ class _splashState extends State<splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 5), () {
+      print('this function will work');
       Navigator.of(context).pop();
-      Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Navigation()));
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.green,
       body: Center(
         child: Image.asset('assets/images/aadhikaarname.png'),
       ),
