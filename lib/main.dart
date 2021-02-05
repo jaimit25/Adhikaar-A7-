@@ -1,6 +1,6 @@
-
 import 'package:Adhikaar/videoViewer.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:Adhikaar/screens/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,10 +19,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: VideoViewer(),
       routes: <String, WidgetBuilder>{
         '/landingpage': (BuildContext context) => new MyApp(),
+        '/videoviewer': (BuildContext context) => new VideoViewer(),
       },
+      home: splash(),
     );
   }
 }
