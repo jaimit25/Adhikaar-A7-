@@ -8,8 +8,14 @@ class add extends StatefulWidget {
 class _addState extends State<add> {
   @override
   Widget build(BuildContext context) {
+    return Addfilesdesign();
+  }
+
+  Widget Addfilesdesign() {
     return Scaffold(
-      backgroundColor: Colors.yellow
+      
+
     );
+
   }
 }
