@@ -24,10 +24,7 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-<<<<<<< HEAD
 apply plugin: 'com.google.gms.google-services'
-=======
->>>>>>> ae56b980e21c33e2fb3abf3b913954565c0aee7c
 
 android {
     compileSdkVersion 29
@@ -43,11 +40,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.Adhikaar"
-<<<<<<< HEAD
         minSdkVersion 23
-=======
-        minSdkVersion 16
->>>>>>> ae56b980e21c33e2fb3abf3b913954565c0aee7c
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -68,9 +61,6 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-<<<<<<< HEAD
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
     implementation 'com.google.firebase:firebase-analytics'
-=======
->>>>>>> ae56b980e21c33e2fb3abf3b913954565c0aee7c
 }
