@@ -16,6 +16,6 @@ class _registerState extends State<register> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
