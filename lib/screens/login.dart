@@ -1,4 +1,8 @@
+import 'package:Adhikaar/screens/Navigation.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'register.dart';
 import 'style.dart';
 
 class login extends StatefulWidget {
@@ -7,6 +11,7 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,22 +46,107 @@ class _loginState extends State<login> {
                 children: <Widget>[
                   SizedBox(height: 40),
                   _labelText('Email:'),
-                  _inputTextField('example@email.com', false),
+                  Container(
+                    padding: EdgeInsets.only(left: 10),
+                    height: 56,
+                    decoration: raisedDecoration,
+                    margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+                    child: TextField(
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18,
+                      ),
+                      decoration: InputDecoration(
+                          hintStyle: TextStyle(
+                            color: Colors.black38,
+                            fontSize: 18,
+                          ),
+                          hintText: 'Enter Your Gmail',
+                          border: InputBorder.none),
+                      onChanged: (value) {
+                        setState(() {
+                          email = value;
+                        });
+                      },
+                    ),
+                  ),
                   SizedBox(height: 16),
                   _labelText('Password:'),
-                  _inputTextField('******', true),
+                  Container(
+                    padding: EdgeInsets.only(left: 10),
+                    height: 56,
+                    decoration: raisedDecoration,
+                    margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+                    child: TextField(
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                        ),
+                        obscureText: _passwordVisible,
+                        decoration: InputDecoration(
+                          hintStyle: TextStyle(
+                            color: Colors.black38,
+                            fontSize: 18,
+                          ),
+                          hintText: 'Password',
+                          border: InputBorder.none,
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _passwordVisible
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: Colors.black,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _passwordVisible = !_passwordVisible;
+                              });
+                            },
+                          ),
+                        ),
+                        onChanged: (value) {
+                          setState(() {
+                            password = value;
+                          });
+                        }),
+                  ),
                   Align(
                     alignment: Alignment.center,
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {
-                        //TODO
+                        print('yyyyyyyyyyyyyyyyyyyyinkwellyyyyyyyyyyyyyy');
+
+                        // FirebaseAuth.instance
+                        //     .signInWithEmailAndPassword(
+                        //         email: email, password: password)
+                        //     .then((value) {
+                        //   print(
+                        //       'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxdonexxxxxxxxxxxxxxxxxxx');
+                        // }).catchError((e) {
+                        //   print(e);
+                        // });
                       },
                       child: Container(
+                        margin: EdgeInsets.only(top: 20),
                         height: 46,
                         width: 160,
                         child: RaisedButton(
                           onPressed: () {
-                            //TODO
+                            FirebaseAuth.instance
+                                .signInWithEmailAndPassword(
+                                    email: email, password: password)
+                                .then((value) {
+                              print('you clicked login');
+                              // Navigator.of(context).pushReplacementNamed('/homepage');
+                              print(
+                                  'XXXXXXXXXXXXX XXXXxxxxxxxxxxRxxxxSuccccccesfull xxxxxxxxxxxxxxxxxxXXXXXXXXXXXXXXXXXXXXXXXXX');
+                              print('you clicked login button');
+                              Navigator.of(context).pop();
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Navigation()));
+                            });
                           },
                           child: Text(
                             'Login',
@@ -76,7 +166,8 @@ class _loginState extends State<login> {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => login()));
+                          MaterialPageRoute(builder: (context) => register()));
+>>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
                     },
                     child: Container(
                       color: Colors.grey[50],
@@ -109,6 +200,13 @@ class _loginState extends State<login> {
       ),
     );
   }
+<<<<<<< HEAD
+=======
+
+  getUser() async {
+    user = FirebaseAuth.instance.currentUser;
+  }
+>>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
 }
 
 // _createAccountLink() {
@@ -134,6 +232,7 @@ class _loginState extends State<login> {
 //   );
 //}
 
+<<<<<<< HEAD
 //button to login in using scial media,
 _loginSocialMediaBtn(IconData icon, Color bgColor) {
   return SizedBox.fromSize(
@@ -179,6 +278,53 @@ _inputTextField(hintText, bool obscuretext) {
     ),
   );
 }
+=======
+// //button to login in using scial media,
+// _loginSocialMediaBtn(IconData icon, Color bgColor) {
+//   return SizedBox.fromSize(
+//     size: Size(54, 54), //button width and height
+//     child: ClipRRect(
+//       borderRadius: BorderRadius.circular(16),
+//       child: Material(
+//         elevation: 16,
+//         shadowColor: Colors.black,
+//         color: bgColor,
+//         child: InkWell(
+//           splashColor: Colors.white12,
+//           onTap: () {},
+//           child: Center(
+//             child: Icon(
+//               icon,
+//               color: Colors.white,
+//               size: 24,
+//             ),
+//           ),
+//         ),
+//       ),
+//     ),
+//   );
+// }
+
+// _inputTextField(hintText, bool obscuretext) {
+//   return Container(
+//     height: 56,
+//     padding: EdgeInsets.fromLTRB(16, 3, 16, 6),
+//     margin: EdgeInsets.all(8),
+//     decoration: raisedDecoration,
+//     child: Center(
+//       child: TextField(
+//         obscureText: obscuretext,
+//         decoration: InputDecoration(
+//             border: InputBorder.none,
+//             hintText: hintText,
+//             hintStyle: TextStyle(
+//               color: Colors.black38,
+//             )),
+//       ),
+//     ),
+//   );
+// }
+>>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
 
 _labelText(title) {
   return Padding(

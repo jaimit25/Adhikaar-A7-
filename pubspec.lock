@@ -258,6 +258,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.11"
+<<<<<<< HEAD
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -265,6 +266,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.1.2+1"
+=======
+>>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -464,6 +467,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.25.0"
+<<<<<<< HEAD
   shared_preferences:
     dependency: "direct main"
     description:
@@ -506,6 +510,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.2+3"
+=======
+>>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
   sky_engine:
     dependency: transitive
     description: flutter

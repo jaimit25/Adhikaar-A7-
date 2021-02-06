@@ -19,17 +19,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Adhikaar',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      routes: <String, WidgetBuilder>{
-        '/landingpage': (BuildContext context) => new MyApp(),
-        '/videoviewer': (BuildContext context) => new VideoViewer(),
-      },
-      home: splash(),
-    );
+
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter UI Practise',
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        routes: <String, WidgetBuilder>{
+          '/landingpage': (BuildContext context) => new MyApp(),
+          '/videoviewer': (BuildContext context) => new VideoViewer(),
+        },
+        home: splash());
+
   }
 }
