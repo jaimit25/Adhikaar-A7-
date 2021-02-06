@@ -1,3 +1,4 @@
+import 'package:Adhikaar/screens/addfeed.dart';
 import 'package:flutter/material.dart';
 
 class add extends StatefulWidget {
@@ -12,10 +13,7 @@ class _addState extends State<add> {
   }
 
   Widget Addfilesdesign() {
-    return Scaffold(
-      
-
-    );
+    return EditProfile();
 
   }
 }

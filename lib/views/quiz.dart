@@ -148,7 +148,8 @@ class QuizTile extends StatelessWidget {
                             fontSize: 13,
                             color: Colors.white,
                             fontWeight: FontWeight.w500),
-                      )
+                      ),
+                      SizedBox(width: 10.0,)
                     ],
                   ),
                 ),
@@ -157,6 +158,8 @@ class QuizTile extends StatelessWidget {
           ),
         ),
       ),
+
     );
+
   }
 }

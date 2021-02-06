@@ -17,7 +17,7 @@ class _AddQuestionState extends State<AddQuestion> {
 
   bool isLoading = false;
 
-  String question = "", option1 = "", option2 = "", option3 = "", option4 = "";
+  String question = "", option1 = "", option2 = "", option3 = "", option4 = "", correct = "";
 
   uploadQuizData() {
 
@@ -32,7 +32,8 @@ class _AddQuestionState extends State<AddQuestion> {
         "option1": option1,
         "option2": option2,
         "option3": option3,
-        "option4": option4
+        "option4": option4,
+        "correct": correct
       };
 
       print("${widget.quizId}");
@@ -42,6 +43,7 @@ class _AddQuestionState extends State<AddQuestion> {
         option2 = "";
         option3 = "";
         option4 = "";
+        correct = "";
         setState(() {
           isLoading = false;
         });
@@ -127,6 +129,16 @@ class _AddQuestionState extends State<AddQuestion> {
                       decoration: InputDecoration(hintText: "Option4"),
                       onChanged: (val){
                         option4 = val;
+                      },
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    TextFormField(
+                      validator: (val) => val.isEmpty ? "correct" : null,
+                      decoration: InputDecoration(hintText: "Correct Option"),
+                      onChanged: (val){
+                        correct = val;
                       },
                     ),
                     SizedBox(

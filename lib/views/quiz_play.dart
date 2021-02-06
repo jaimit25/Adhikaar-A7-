@@ -65,13 +65,8 @@ class _QuizPlayState extends State<QuizPlay> {
       questionSnapshot.get("option3"),
       questionSnapshot.get("option4")
     ];
-    options.shuffle();
 
-    questionModel.option1 = options[0];
-    questionModel.option2 = options[1];
-    questionModel.option3 = options[2];
-    questionModel.option4 = options[3];
-    questionModel.correctOption = questionSnapshot.get("option1");
+    questionModel.correctOption = questionSnapshot.get("correct");
     questionModel.answered = false;
 
     print(questionModel.correctOption.toLowerCase());
