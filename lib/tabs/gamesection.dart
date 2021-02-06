@@ -2,7 +2,6 @@ import 'package:Adhikaar/videoViewer.dart';
 import 'package:Adhikaar/views/quiz.dart';
 import 'package:flutter/material.dart';
 
-
 class gamesection extends StatefulWidget {
   @override
   _gamesectionState createState() => _gamesectionState();
@@ -168,7 +167,8 @@ class _gamesectionState extends State<gamesection> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+                        Navigator.of(context)
+                            .pushReplacement(MaterialPageRoute(builder: (_) {
                           return VideoViewer();
                         }));
                       },
