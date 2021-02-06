@@ -18,7 +18,8 @@ class _splashState extends State<splash> {
       Navigator.of(context).pop();
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => Navigation()));
-    });
+    }
+    );
   }
 
   @override
