@@ -1,4 +1,3 @@
-
 import 'package:Adhikaar/views/quiz.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +49,6 @@ class _gamesectionState extends State<gamesection> {
                           return Quiz();
                         }));
                         print('you clicked first box');
-
                       },
                       child: Container(
                         child: Column(

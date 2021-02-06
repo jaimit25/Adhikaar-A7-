@@ -6,7 +6,6 @@ import 'package:Adhikaar/videoViewer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:Adhikaar/screens/splash.dart';
 import 'package:flutter/material.dart';
-import 'helper/constants.dart';
 import 'package:video_player/video_player.dart';
 
 void main() {

@@ -7,7 +7,6 @@ class home extends StatefulWidget {
 }
 
 class _homeState extends State<home> {
-
   final List<Widget> imageSliders = [
     'https://assets.telegraphindia.com/telegraph/07b3a268-5d6b-4250-9fc9-7ae15ecd536e.jpg',
     'https://www.europarl.europa.eu/resources/library/images/20200225PHT73309/20200225PHT73309-cl.jpg',
