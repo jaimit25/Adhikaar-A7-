@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
         debugShowCheckedModeBanner: false,
         title: 'Flutter UI Practise',
         theme: ThemeData(
@@ -31,6 +30,5 @@ class MyApp extends StatelessWidget {
           '/videoviewer': (BuildContext context) => new VideoViewer(),
         },
         home: splash());
-
   }
 }

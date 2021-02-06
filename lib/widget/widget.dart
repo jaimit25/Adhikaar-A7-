@@ -12,7 +12,7 @@ class AppLogo extends StatelessWidget {
           TextSpan(text: 'Quiz', style: TextStyle(fontWeight: FontWeight.w600
               , color: Colors.black54)),
           TextSpan(text: 'Section', style: TextStyle(fontWeight: FontWeight.w600
-              , color: Colors.blue)),
+              , color: Colors.red[400])),
         ],
       ),
     );

@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 import 'package:Adhikaar/videoViewer.dart';
 import 'package:Adhikaar/views/quiz.dart';
-=======
->>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
 import 'package:flutter/material.dart';
+
 
 class gamesection extends StatefulWidget {
   @override
@@ -49,13 +47,10 @@ class _gamesectionState extends State<gamesection> {
                   children: [
                     GestureDetector(
                       onTap: () {
-<<<<<<< HEAD
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
-                          return Quiz();
-                        }));
-=======
->>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
-                        print('you clicked first box');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Quiz()),
+                        );
                       },
                       child: Container(
                         child: Column(
@@ -173,14 +168,9 @@ class _gamesectionState extends State<gamesection> {
                     ),
                     GestureDetector(
                       onTap: () {
-<<<<<<< HEAD
                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
                           return VideoViewer();
                         }));
-                        print('you clicked first box');
-=======
-                        print('you clicked Third box');
->>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
                       },
                       child: Container(
                         child: Column(

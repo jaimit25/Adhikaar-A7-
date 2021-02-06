@@ -57,24 +57,6 @@ class _homeState extends State<home> {
           ))
       .toList();
 
-<<<<<<< HEAD
-  Widget Slider() {
-    return Container(
-      decoration:
-      BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20))),
-      child: CarouselSlider(
-        options: CarouselOptions(
-          autoPlay: true,
-          aspectRatio: 2.0,
-          enlargeCenterPage: true,
-        ),
-        items: imageSliders,
-      ),
-    );
-  }
-
-=======
->>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,10 +75,6 @@ class _homeState extends State<home> {
           Slider(),
         ],
       ),
-<<<<<<< HEAD
-
-
-=======
     );
   }
 
@@ -112,7 +90,6 @@ class _homeState extends State<home> {
         ),
         items: imageSliders,
       ),
->>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
     );
   }
 }

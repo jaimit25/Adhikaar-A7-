@@ -1,11 +1,10 @@
 // TODO Implement this library.
-
-
 import 'package:Adhikaar/screens/Navigation.dart';
 import 'package:Adhikaar/screens/login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'style.dart';
 
 import 'package:flutter/material.dart';
@@ -16,7 +15,6 @@ class register extends StatefulWidget {
 }
 
 class _registerState extends State<register> {
-
   var _passwordVisible;
   String email;
   String Nameuser;
@@ -301,6 +299,7 @@ class _registerState extends State<register> {
   //     ),
   //   );
   // }
+
   _labelText(title) {
     return Padding(
       padding: EdgeInsets.only(left: 24),

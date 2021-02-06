@@ -62,7 +62,6 @@ class VideoViewerState extends State<VideoViewer> {
                     ? Icons.pause
                     : Icons.play_arrow),
               ),
-<<<<<<< HEAD
               Container(
                 //height: 50,
                 margin: EdgeInsets.only(left:60,right:60,top: 100,bottom: 50),
@@ -78,27 +77,17 @@ class VideoViewerState extends State<VideoViewer> {
                     fillColor: Colors.white.withOpacity(0.9),
                   ),
                 ),
-=======
-              TextField(
-                controller: _userview,
->>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
               ),
               GestureDetector(
                 onTap: () => print("View: ${_userview.text}"),
                 child: RichText(
                   text: TextSpan(children: [
                     TextSpan(
-<<<<<<< HEAD
                         text: ' Submit ',
                         style: TextStyle(
                           fontSize: 25,
                           backgroundColor: Colors.black,
                           color: Colors.white,
-=======
-                        text: 'Submit',
-                        style: TextStyle(
-                          color: Colors.black,
->>>>>>> f736c575d0c2e0b01be6028fce734d4b53f91d46
                           fontWeight: FontWeight.w500,
                         ))
                   ]),

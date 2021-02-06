@@ -2,6 +2,7 @@ import 'package:Adhikaar/tabs/add.dart';
 import 'package:Adhikaar/tabs/gamesection.dart';
 import 'package:Adhikaar/tabs/home.dart';
 import 'package:Adhikaar/tabs/profile.dart';
+import 'package:Adhikaar/views/quiz.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _NavigationState extends State<Navigation> {
       child: add(),
     ),
     Center(
-      child: gamesection(),
+      child: Quiz(),
     ),
     Center(
       child: profile(),
