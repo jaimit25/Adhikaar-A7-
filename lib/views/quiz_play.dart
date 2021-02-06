@@ -1,3 +1,4 @@
+import 'package:Adhikaar/tabs/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../models/question_model.dart';
@@ -66,6 +67,11 @@ class _QuizPlayState extends State<QuizPlay> {
       questionSnapshot.get("option4")
     ];
 
+    questionModel.option1 = questionSnapshot.get("option1");
+    questionModel.option2 = questionSnapshot.get("option2");
+    questionModel.option3 = questionSnapshot.get("option3");
+    questionModel.option4 = questionSnapshot.get("option4");
+
     questionModel.correctOption = questionSnapshot.get("correct");
     questionModel.answered = false;
 
@@ -118,12 +124,17 @@ class _QuizPlayState extends State<QuizPlay> {
                                     questionSnaphot.docs[index]),
                                 index: index,
                               );
-                            })
+
+                            }),
                   ],
                 ),
               ),
+
+
           ),
+
     );
+
   }
 }
 
@@ -165,6 +176,18 @@ class _InfoHeaderState extends State<InfoHeader> {
                 text: "NotAttempted",
                 number: _notAttempted,
               ),
+              Center(
+                child: RaisedButton(
+                  child: Text('Submit'),
+                  onPressed: () {
+                    Scaffold.of(context).showSnackBar(SnackBar(
+                      content: Text("Your score is ${_correct}"),
+                    ));
+                    // Navigator.push(
+                    //     context, MaterialPageRoute(builder: (context) => home()));
+                  },
+                ),
+              )
             ],
           ),
         ) : Container();
@@ -182,6 +205,7 @@ class QuizPlayTile extends StatefulWidget {
 
   @override
   _QuizPlayTileState createState() => _QuizPlayTileState();
+
 }
 
 class _QuizPlayTileState extends State<QuizPlayTile> {
@@ -336,6 +360,7 @@ class _QuizPlayTileState extends State<QuizPlayTile> {
           ),
         ],
       ),
+
     );
   }
 }
