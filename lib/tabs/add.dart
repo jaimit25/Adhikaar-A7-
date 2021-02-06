@@ -1,5 +1,6 @@
-import 'package:Adhikaar/screens/addfeed.dart';
+import 'package:Adhikaar/screens/AddFeed.dart';
 import 'package:flutter/material.dart';
+import '../screens/AddFeed.dart';
 
 class add extends StatefulWidget {
   @override
@@ -9,11 +10,7 @@ class add extends StatefulWidget {
 class _addState extends State<add> {
   @override
   Widget build(BuildContext context) {
-    return Addfilesdesign();
+    return AddFeed();
   }
 
-  Widget Addfilesdesign() {
-    return EditProfile();
-
-  }
 }

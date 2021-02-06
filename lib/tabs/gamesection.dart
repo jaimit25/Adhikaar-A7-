@@ -1,3 +1,4 @@
+import 'package:Adhikaar/videoViewer.dart';
 import 'package:Adhikaar/views/quiz.dart';
 import 'package:flutter/material.dart';
 
@@ -166,7 +167,10 @@ class _gamesectionState extends State<gamesection> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        print('you clicked Third box');
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+                          return VideoViewer();
+                        }));
+                        print('you clicked first box');
                       },
                       child: Container(
                         child: Column(

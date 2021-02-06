@@ -1,3 +1,4 @@
+import 'package:Adhikaar/screens/AddFeed.dart';
 import 'package:Adhikaar/screens/Navigation.dart';
 import 'package:Adhikaar/screens/login.dart';
 import 'package:Adhikaar/screens/register.dart';
@@ -30,6 +31,5 @@ class MyApp extends StatelessWidget {
       },
       home: splash(),
     );
-
   }
 }

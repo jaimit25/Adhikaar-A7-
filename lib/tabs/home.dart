@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
 class home extends StatefulWidget {
   @override
   _homeState createState() => _homeState();
@@ -56,21 +57,10 @@ class _homeState extends State<home> {
           ))
       .toList();
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: [
-          Slider(),
-        ],
-      ),
-    );
-  }
-
   Widget Slider() {
     return Container(
       decoration:
-          BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20))),
+      BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20))),
       child: CarouselSlider(
         options: CarouselOptions(
           autoPlay: true,
@@ -79,6 +69,29 @@ class _homeState extends State<home> {
         ),
         items: imageSliders,
       ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Adhikaar',
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 18,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      body: ListView(
+        children: [
+          Slider(),
+        ],
+      ),
+
+
     );
   }
 }
