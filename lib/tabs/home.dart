@@ -60,6 +60,16 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Adhikaar',
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 18,
+            color: Colors.white,
+          ),
+        ),
+      ),
       body: ListView(
         children: [
           Slider(),

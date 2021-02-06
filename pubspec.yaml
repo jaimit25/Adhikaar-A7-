@@ -41,6 +41,7 @@ dependencies:
   #new
   firebase_storage : ^5.0.0
   #old working
+  
   # firebase_auth: ^0.14.0+5
   #new
   firebase_core: ^0.5.0+1

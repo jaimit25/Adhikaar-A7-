@@ -1,3 +1,4 @@
+import 'package:Adhikaar/screens/AddFeed.dart';
 import 'package:Adhikaar/screens/Navigation.dart';
 import 'package:Adhikaar/screens/login.dart';
 import 'package:Adhikaar/screens/register.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter UI Practise',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.red,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: <String, WidgetBuilder>{
