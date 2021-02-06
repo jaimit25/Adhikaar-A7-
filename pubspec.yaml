@@ -61,6 +61,9 @@ dependencies:
   video_player: ^0.10.1
   shared_preferences: ^0.5.6+3
   flutter_spinkit: ^4.1.2+1
+  cached_network_image: ^2.2.0+1
+  carousel_pro: ^1.0.0
+  carousel_slider: ^3.0.0
  
 
 dev_dependencies:
