@@ -1,3 +1,4 @@
+import 'package:Adhikaar/views/quiz.dart';
 import 'package:flutter/material.dart';
 
 class gamesection extends StatefulWidget {
@@ -44,7 +45,11 @@ class _gamesectionState extends State<gamesection> {
                   children: [
                     GestureDetector(
                       onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+                          return Quiz();
+                        }));
                         print('you clicked first box');
+
                       },
                       child: Container(
                         child: Column(

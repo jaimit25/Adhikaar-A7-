@@ -1,7 +1,10 @@
+import 'package:Adhikaar/screens/login.dart';
 import 'package:Adhikaar/videoViewer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:Adhikaar/screens/splash.dart';
 import 'package:flutter/material.dart';
+
+import 'helper/constants.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,6 +13,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
