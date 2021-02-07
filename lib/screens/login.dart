@@ -1,4 +1,5 @@
 import 'package:Adhikaar/screens/Navigation.dart';
+import 'package:Adhikaar/screens/admin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'register.dart';
@@ -182,6 +183,27 @@ class _loginState extends State<login> {
                       child: Center(
                         child: Text(
                           'Don\'t have an Account ? Register now',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => admin()));
+                    },
+                    child: Container(
+                      color: Colors.grey[50],
+                      padding: EdgeInsets.only(bottom: 16),
+                      height: 60,
+                      child: Center(
+                        child: Text(
+                          'Are you an Admin?',
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: Colors.black,
