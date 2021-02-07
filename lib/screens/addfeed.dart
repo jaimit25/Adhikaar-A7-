@@ -51,17 +51,28 @@ class _AddFeedState extends State<AddFeed> {
               SizedBox(
                 height: 30,
               ),
-              imageurl != null
-                  ? Image.network(imageurl)
-                  : Container(
-                      height: 200,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage('assets/images/addimg.png'))),
-                    ),
+              // uploadImage();
+              GestureDetector(
+                onTap: () {
+                  uploadImage();
+                },
+                child: Container(
+                  child: imageurl != null
+                      ? Image.network(imageurl)
+                      : Container(
+                          height: 200,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                    'https://i.ibb.co/jrD5yQt/undraw-Camera-re-cnp4.png'),
+                              )),
+                        ),
+                ),
+              ),
+
               SizedBox(
                 height: 20.0,
               ),
@@ -122,7 +133,14 @@ class _AddFeedState extends State<AddFeed> {
               ),
               GestureDetector(
                 onTap: () {
-                  uploadImage();
+                  // uploadImage();
+                  FirebaseFirestore.instance.collection('Feed').add({
+                    'Photo': imageurl,
+                    'Head': heading.text,
+                    'body': bodymaterial.text,
+                  });
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Navigation()));
                 },
                 child: Container(
                   margin: EdgeInsets.all(10),
@@ -183,8 +201,8 @@ class _AddFeedState extends State<AddFeed> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => ShowFeeds()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ShowFeeds()));
                   print('this is LeaderBoard Check Button');
                   // Navigator.push(context,MaterialPageRoute(builder: (context)=>)));
                 },
@@ -253,13 +271,13 @@ class _AddFeedState extends State<AddFeed> {
         setState(() {
           imageurl = downloadUrl;
         });
-        FirebaseFirestore.instance.collection('Feed').add({
-          'Photo': imageurl,
-          'Head': heading.text,
-          'body': bodymaterial.text,
-        });
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => Navigation()));
+        // FirebaseFirestore.instance.collection('Feed').add({
+        //   'Photo': imageurl,
+        //   'Head': heading.text,
+        //   'body': bodymaterial.text,
+        // });
+        // Navigator.push(
+        //     context, MaterialPageRoute(builder: (context) => Navigation()));
 
         print(imageurl);
       } else {

@@ -1,4 +1,5 @@
 
+import 'package:Adhikaar/screens/adminhomepage.dart';
 import 'package:Adhikaar/screens/showView.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -24,7 +25,7 @@ class _adminState extends State<admin> {
     super.initState();
     db = FirebaseDatabase.instance.reference();
     print('this code has run');
-    db.child("data").once().then((DataSnapshot data) async {
+    db.child("admin").once().then((DataSnapshot data) async {
       datafromdatabase = data.value;
       datastring = datafromdatabase.toString();
       print(datafromdatabase);
@@ -130,12 +131,12 @@ class _adminState extends State<admin> {
                         width: 160,
                         child: RaisedButton(
                           onPressed: () {
-                            if (code == datastring) {
+                            if (code == datafromdatabase['data']) {
                               Navigator.of(context).pop();
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => ShowView()));
+                                      builder: (context) => adminhomepage()));
                             } else {
                               print('error');
                             }
@@ -157,8 +158,8 @@ class _adminState extends State<admin> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) => admin()));
+                    //   Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) => admin()));
                     },
                     child: Container(
                       color: Colors.grey[50],

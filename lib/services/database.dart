@@ -58,6 +58,10 @@ class DatabaseService {
         .collection('videoView').where('upvote', isEqualTo: 1).get();
   }
 
+  Future<QuerySnapshot> videoLink() async {
+    return await FirebaseFirestore.instance.collection('VideoLink').where('video', isNotEqualTo: null).get();
+  }
+
   updateView(sDoc, newValues) {
     return FirebaseFirestore.instance
         .collection('videoView')

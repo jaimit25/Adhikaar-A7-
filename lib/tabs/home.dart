@@ -95,189 +95,199 @@ class _homeState extends State<home> {
           Container(
             margin: EdgeInsets.only(
               top: 10,
-              right: 5,
+              right: 10,
               left: 10,
             ),
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Row(
+            child: Column(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => pmjdy()));
-                  },
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          child: Image.asset("assets/images/pmjdy.png"),
-                          height: 90,
-                          width: double.infinity,
-                          // child: Image.network(
-                          //   "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
-                          //   fit: BoxFit.cover,
-                          // ),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => pmjdy()));
+                      },
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              child: Image.asset("assets/images/pmjdy.png"),
+                              height: 130,
+                              width: double.infinity,
+                              // child: Image.network(
+                              //   "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
+                              //   fit: BoxFit.cover,
+                              // ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.all(10),
-                    height: 110,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(20.0),
-                      gradient: new LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          // Color.fromARGB(255, 25, 178, 238),
-                          Colors.grey[300],
-                          Colors.grey[200]
-                        ],
-                      ),
-                      // border: Border.all(
-                      // )
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => bbbp()));
-                  },
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          child: Image.asset("assets/images/bbbp.png"),
-                          height: 100,
-                          width: double.infinity,
-                          // child: Image.network(
-                          //   "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
-                          //   fit: BoxFit.cover,
-                          // ),
+                        margin: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10),
+                        height: 150,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(20.0),
+                          gradient: new LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              // Color.fromARGB(255, 25, 178, 238),
+                              Colors.grey[300],
+                              Colors.grey[200]
+                            ],
+                          ),
+                          // border: Border.all(
+                          // )
                         ),
-                      ],
-                    ),
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    height: 110,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(20.0),
-                      gradient: new LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          // Color.fromARGB(255, 25, 178, 238),
-                          Colors.grey[300],
-                          Colors.grey[200]
-                        ],
                       ),
-                      // border: Border.all(
-                      // )
                     ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => baalika()));
-                  },
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          child: Image.asset("assets/images/balika.jpg"),
-                          height: 100,
-                          width: double.infinity,
-                          // child: Image.network(
-                          //   "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
-                          //   fit: BoxFit.cover,
-                          // ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => bbbp()));
+                      },
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              child: Image.asset("assets/images/bbbp.png"),
+                              height: 130,
+                              width: double.infinity,
+                              // child: Image.network(
+                              //   "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
+                              //   fit: BoxFit.cover,
+                              // ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    height: 110,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(20.0),
-                      gradient: new LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          // Color.fromARGB(255, 25, 178, 238),
-                          Colors.grey[300],
-                          Colors.grey[200]
-                        ],
-                      ),
-                      // border: Border.all(
-                      // )
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => dhanlakshmi()));
-                  },
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          child: Image.asset("assets/images/dhan.jpg"),
-                          height: 100,
-                          width: double.infinity,
-                          // child: Image.network(
-                          //   "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
-                          //   fit: BoxFit.cover,
-                          // ),
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(5),
+                        height: 150,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(20.0),
+                          gradient: new LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              // Color.fromARGB(255, 25, 178, 238),
+                              Colors.grey[300],
+                              Colors.grey[200]
+                            ],
+                          ),
+                          // border: Border.all(
+                          // )
                         ),
-                      ],
-                    ),
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(5),
-                    height: 110,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(20.0),
-                      gradient: new LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          // Color.fromARGB(255, 25, 178, 238),
-                          Colors.grey[300],
-                          Colors.grey[200]
-                        ],
                       ),
-                      // border: Border.all(
-                      // )
                     ),
-                  ),
+                  ],
                 ),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => baalika()));
+                      },
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              child: Image.asset("assets/images/balika.jpg"),
+                              height: 130,
+                              width: double.infinity,
+                              // child: Image.network(
+                              //   "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
+                              //   fit: BoxFit.cover,
+                              // ),
+                            ),
+                          ],
+                        ),
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(5),
+                        height: 150,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(20.0),
+                          gradient: new LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              // Color.fromARGB(255, 25, 178, 238),
+                              Colors.grey[300],
+                              Colors.grey[200]
+                            ],
+                          ),
+                          // border: Border.all(
+                          // )
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => dhanlakshmi()));
+                      },
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              child: Image.asset("assets/images/dhan.jpg"),
+                              height: 130,
+                              width: double.infinity,
+                              // child: Image.network(
+                              //   "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
+                              //   fit: BoxFit.cover,
+                              // ),
+                            ),
+                          ],
+                        ),
+                        margin: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(5),
+                        height: 150,
+                        width: 180,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(20.0),
+                          gradient: new LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              // Color.fromARGB(255, 25, 178, 238),
+                              Colors.grey[300],
+                              Colors.grey[200]
+                            ],
+                          ),
+                          // border: Border.all(
+                          // )
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
           Container(
             margin: EdgeInsets.only(
               top: 10,
-              bottom: 10,
+              bottom: 20,
               left: 20,
             ),
             child: Text(
@@ -293,7 +303,7 @@ class _homeState extends State<home> {
             decoration: BoxDecoration(
                 color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(10)),
-            margin: EdgeInsets.only(top: 5, left: 10, right: 10),
+            margin: EdgeInsets.only(top: 5, left: 10, right: 10, bottom: 20),
 
             child:
             Column(mainAxisAlignment: MainAxisAlignment.center, children: [
