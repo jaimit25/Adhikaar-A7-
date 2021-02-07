@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:Adhikaar/screens/Navigation.dart';
+import 'package:Adhikaar/screens/Showfeeds.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -182,6 +183,8 @@ class _AddFeedState extends State<AddFeed> {
               ),
               GestureDetector(
                 onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => ShowFeeds()));
                   print('this is LeaderBoard Check Button');
                   // Navigator.push(context,MaterialPageRoute(builder: (context)=>)));
                 },
