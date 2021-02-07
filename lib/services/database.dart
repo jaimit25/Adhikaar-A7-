@@ -47,4 +47,24 @@ class DatabaseService {
         .collection("QNA")
         .get();
   }
+
+  Future<QuerySnapshot> View() async {
+    return await FirebaseFirestore.instance
+        .collection('videoView').where('upvote', isEqualTo: 0).get();
+  }
+
+  Future<QuerySnapshot> Lead() async {
+    return await FirebaseFirestore.instance
+        .collection('videoView').where('upvote', isEqualTo: 1).get();
+  }
+
+  updateView(sDoc, newValues) {
+    return FirebaseFirestore.instance
+        .collection('videoView')
+        .doc(sDoc)
+        .update(newValues)
+        .catchError((e) {
+      print(e);
+    });
+  }
 }

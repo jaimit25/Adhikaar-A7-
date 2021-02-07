@@ -1,3 +1,7 @@
+
+import 'package:Adhikaar/screens/showView.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'style.dart';
 
@@ -7,6 +11,30 @@ class admin extends StatefulWidget {
 }
 
 class _adminState extends State<admin> {
+  var db;
+  var datafromdatabase;
+  String datastring;
+  FirebaseAuth _auth;
+  User user;
+
+  String code;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    db = FirebaseDatabase.instance.reference();
+    print('this code has run');
+    db.child("data").once().then((DataSnapshot data) async {
+      datafromdatabase = data.value;
+      datastring = datafromdatabase.toString();
+      print(datafromdatabase);
+      setState(() {
+        // code = datafromdatabase;
+        datastring = datafromdatabase;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +75,11 @@ class _adminState extends State<admin> {
                     decoration: raisedDecoration,
                     margin: EdgeInsets.only(top: 10, left: 10, right: 10),
                     child: TextFormField(
+                      onChanged: (value) {
+                        setState(() {
+                          code = value;
+                        });
+                      },
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 18,
@@ -63,7 +96,7 @@ class _adminState extends State<admin> {
                   // Container(
                   //   padding: EdgeInsets.only(left: 10),
                   //   height: 60,
-                  //   decoration: BoxDecoration(
+                  //   decoration: BRoxDecoration(
                   //       border: Border.all(width: 2, color: Colors.black),
                   //       borderRadius: BorderRadius.all(Radius.circular(5))),
                   //   margin: EdgeInsets.only(top: 80, left: 10, right: 10),
@@ -89,7 +122,7 @@ class _adminState extends State<admin> {
                     alignment: Alignment.center,
                     child: InkWell(
                       onTap: () {
-                        //TODO
+                        //TOif(DO
                       },
                       child: Container(
                         margin: EdgeInsets.only(top: 20),
@@ -97,7 +130,15 @@ class _adminState extends State<admin> {
                         width: 160,
                         child: RaisedButton(
                           onPressed: () {
-                            //TODO
+                            if (code == datastring) {
+                              Navigator.of(context).pop();
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ShowView()));
+                            } else {
+                              print('error');
+                            }
                           },
                           child: Text(
                             'Login',
@@ -116,8 +157,8 @@ class _adminState extends State<admin> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => admin()));
+                      // Navigator.push(context,
+                      //     MaterialPageRoute(builder: (context) => admin()));
                     },
                     child: Container(
                       color: Colors.grey[50],

@@ -1,4 +1,5 @@
 import 'package:Adhikaar/Model/userprofile.dart';
+import 'package:Adhikaar/screens/editprofile.dart';
 import 'package:Adhikaar/screens/login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -97,7 +98,7 @@ class _profileState extends State<profile> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => profile()));
+                                              builder: (context) => editprofile()));
                                     },
                                     child: Container(
                                       margin: EdgeInsets.all(2),
@@ -193,10 +194,6 @@ class _profileState extends State<profile> {
                           onTap: () {
                             FirebaseAuth.instance.signOut();
                             Navigator.of(context).pop();
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => login()));
                           },
                           child: Container(
                             margin: EdgeInsets.only(top: 10),

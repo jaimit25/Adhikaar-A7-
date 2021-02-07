@@ -84,7 +84,7 @@ class VideoViewerState extends State<VideoViewer> {
               ),
               GestureDetector(
                 onTap: () {
-                  databaseService.addData({'View':_userview.text, 'UID': user});
+                  databaseService.addData({'View':_userview.text, 'UID': user, 'upvote': 0});
                   print("View: ${_userview.text}");
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Navigation()));

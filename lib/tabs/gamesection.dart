@@ -1,3 +1,5 @@
+import 'package:Adhikaar/screens/leaderboard.dart';
+import 'package:Adhikaar/screens/showView.dart';
 import 'package:Adhikaar/videoViewer.dart';
 import 'package:Adhikaar/views/quiz.dart';
 import 'package:flutter/material.dart';
@@ -104,65 +106,68 @@ class _gamesectionState extends State<gamesection> {
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        print('you clicked Second box');
-                      },
-                      child: Container(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(
-                                top: 30,
-                                left: 10,
-                                right: 5,
-                              ),
-                              child: Text(
-                                'Perspective Lookup',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w900,
-                                    fontSize: 19),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                top: 10,
-                                right: 5,
-                                left: 10,
-                              ),
-                              child: Text(
-                                'Test Your Perspective',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14),
-                              ),
-                            ),
-                          ],
-                        ),
-                        margin: EdgeInsets.all(10),
-                        height: 170,
-                        width: 170,
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(20.0),
-                          gradient: new LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              // Color.fromARGB(255, 25, 178, 238),
-                              Colors.red,
-                              Colors.orange
-                            ],
-                          ),
-                          // border: Border.all(
-                          // )
-                        ),
-                      ),
-                    ),
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     Navigator.push(context,
+                    //         MaterialPageRoute(builder: (context) => ShowView()));
+                    //
+                    //     print('you clicked Second box');
+                    //   },
+                    //   child: Container(
+                    //     child: Column(
+                    //       mainAxisAlignment: MainAxisAlignment.start,
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         Container(
+                    //           margin: EdgeInsets.only(
+                    //             top: 30,
+                    //             left: 10,
+                    //             right: 5,
+                    //           ),
+                    //           child: Text(
+                    //             'Perspective Lookup',
+                    //             style: TextStyle(
+                    //                 color: Colors.white,
+                    //                 fontWeight: FontWeight.w900,
+                    //                 fontSize: 19),
+                    //           ),
+                    //         ),
+                    //         Container(
+                    //           margin: EdgeInsets.only(
+                    //             top: 10,
+                    //             right: 5,
+                    //             left: 10,
+                    //           ),
+                    //           child: Text(
+                    //             'Test Your Perspective',
+                    //             style: TextStyle(
+                    //                 color: Colors.white,
+                    //                 fontWeight: FontWeight.w400,
+                    //                 fontSize: 14),
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //     margin: EdgeInsets.all(10),
+                    //     height: 170,
+                    //     width: 170,
+                    //     decoration: BoxDecoration(
+                    //       color: Colors.green,
+                    //       borderRadius: BorderRadius.circular(20.0),
+                    //       gradient: new LinearGradient(
+                    //         begin: Alignment.topCenter,
+                    //         end: Alignment.bottomRight,
+                    //         colors: [
+                    //           // Color.fromARGB(255, 25, 178, 238),
+                    //           Colors.red,
+                    //           Colors.orange
+                    //         ],
+                    //       ),
+                    //       // border: Border.all(
+                    //       // )
+                    //     ),
+                    //   ),
+                    // ),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(context,
@@ -260,6 +265,8 @@ class _gamesectionState extends State<gamesection> {
 
             GestureDetector(
               onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Leaderboard()));
                 print('this is LeaderBoard Check Button');
                 // Navigator.push(context,MaterialPageRoute(builder: (context)=>)));
               },
@@ -307,7 +314,7 @@ class _gamesectionState extends State<gamesection> {
                 ),
                 Container(
                   child: Text(
-                    'Top People',
+                    'Developer',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
                     textAlign: TextAlign.center,
                   ),
@@ -331,14 +338,14 @@ class _gamesectionState extends State<gamesection> {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJm0gAXunXcm3HezBOW5XyULCkkdCxQ95_XA&usqp=CAU'),
+                            'https://firebasestorage.googleapis.com/v0/b/adhikaar-d3f08.appspot.com/o/2.png?alt=media&token=0d4718a6-dd76-4e68-93fe-311239fa60b5'),
                       ),
                     ),
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 30),
                     child: Text(
-                      'User Name',
+                      'Adhikaar',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
