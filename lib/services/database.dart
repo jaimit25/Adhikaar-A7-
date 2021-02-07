@@ -5,8 +5,8 @@ class DatabaseService {
 
   DatabaseService({this.uid});
 
-  Future<void> addData(userData) async {
-    Firestore.instance.collection("users").add(userData).catchError((e) {
+  Future<void> addData(view) async {
+    FirebaseFirestore.instance.collection("videoView").add(view).catchError((e) {
       print(e);
     });
   }

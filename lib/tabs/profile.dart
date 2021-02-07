@@ -1,3 +1,7 @@
+import 'package:Adhikaar/Model/userprofile.dart';
+import 'package:Adhikaar/screens/login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class profile extends StatefulWidget {
@@ -6,8 +10,45 @@ class profile extends StatefulWidget {
 }
 
 class _profileState extends State<profile> {
+  FirebaseAuth _auth;
+  User user;
+  String test;
+  userprofile localuser;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCurrentUser();
+  }
+
   @override
   Widget build(BuildContext context) {
+    return Loader();
+  }
+
+  Widget Loader() {
+    return FutureBuilder(
+      future:
+          FirebaseFirestore.instance.collection('users').doc(user.uid).get(),
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+        if (!snapshot.hasData) {
+          return loadingwidget();
+        }
+        return profilepage();
+      },
+    );
+  }
+
+  Widget loadingwidget() {
+    return Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+
+  Widget profilepage() {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       body: SingleChildScrollView(
@@ -17,7 +58,7 @@ class _profileState extends State<profile> {
               height: 250,
               width: double.infinity,
               child: Image.network(
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJm0gAXunXcm3HezBOW5XyULCkkdCxQ95_XA&usqp=CAU",
+                "https://i.ibb.co/QdQ3CQK/undraw-wishes-icyp.png",
                 fit: BoxFit.cover,
               ),
               // Image.asset("assets/images/children.jpg"),
@@ -43,18 +84,37 @@ class _profileState extends State<profile> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    "Jenny",
+                                    localuser.Name,
                                     style: Theme.of(context).textTheme.title,
                                   ),
                                   ListTile(
                                     contentPadding: EdgeInsets.all(0),
-                                    title: Text("Product Designer"),
-                                    subtitle: Text("Mumbai"),
+                                    title: Text(localuser.occupation),
+                                    subtitle: Text(localuser.city),
                                   ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => profile()));
+                                    },
+                                    child: Container(
+                                      margin: EdgeInsets.all(2),
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5)),
+                                          border: Border.all(
+                                              width: 2,
+                                              color: Colors.black26,
+                                              style: BorderStyle.solid)),
+                                      child: Text("Edit Profile"),
+                                    ),
+                                  )
                                 ],
                               ),
                             ),
-                            // SizedBox(height: 10.0),
+                            SizedBox(height: 10.0),
                             // Row(
                             //   children: <Widget>[
                             //     Expanded(
@@ -93,8 +153,7 @@ class _profileState extends State<profile> {
                             borderRadius: BorderRadius.circular(10.0),
                             border: Border.all(width: 1, color: Colors.white),
                             image: DecorationImage(
-                                image: NetworkImage(
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJm0gAXunXcm3HezBOW5XyULCkkdCxQ95_XA&usqp=CAU"),
+                                image: NetworkImage(localuser.Photo),
                                 fit: BoxFit.cover)),
                         margin: EdgeInsets.only(left: 16.0),
                       ),
@@ -114,26 +173,49 @@ class _profileState extends State<profile> {
                         Divider(),
                         ListTile(
                           title: Text("Email"),
-                          subtitle: Text("jenny12@gmail.com"),
+                          subtitle: Text(localuser.Email),
                           leading: Icon(Icons.email),
                         ),
                         ListTile(
                           title: Text("Phone"),
-                          subtitle: Text("+91 8723450109"),
+                          subtitle: Text(localuser.phone),
                           leading: Icon(Icons.phone),
                         ),
                         ListTile(
                           title: Text("About"),
-                          subtitle: Text(
-                              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, illo repellendus quas beatae reprehenderit nemo, debitis explicabo officiis sit aut obcaecati iusto porro? Exercitationem illum consequuntur magnam eveniet delectus ab."),
+                          subtitle: Text(localuser.aboutus),
                           leading: Icon(Icons.person),
+                        ),
+                        ListTile(
+                          title: Text(""),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            FirebaseAuth.instance.signOut();
+                            Navigator.of(context).pop();
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => login()));
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(top: 10),
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5)),
+                                border: Border.all(
+                                    width: 2,
+                                    color: Colors.black26,
+                                    style: BorderStyle.solid)),
+                            child: Text("Log Out"),
+                          ),
                         ),
                         ListTile(
                           title: Text(""),
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -145,5 +227,25 @@ class _profileState extends State<profile> {
         ),
       ),
     );
+  }
+
+  getCurrentUser() async {
+    var user1 = FirebaseAuth.instance.currentUser;
+    setState(() {
+      user = user1;
+    });
+    final uid = user.uid;
+    print(uid);
+    var doc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.uid)
+        .get();
+    print(doc.data);
+
+    setState(() {
+      localuser = userprofile.fromDocument(doc);
+    });
+    print(localuser.Email);
+    print('this method has run');
   }
 }

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:Adhikaar/screens/Navigation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -251,9 +252,11 @@ class _AddFeedState extends State<AddFeed> {
         });
         FirebaseFirestore.instance.collection('Feed').add({
           'Photo': imageurl,
-          'Head': headfeed,
-          'body': bodyfeed,
+          'Head': heading.text,
+          'body': bodymaterial.text,
         });
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => Navigation()));
 
         print(imageurl);
       } else {

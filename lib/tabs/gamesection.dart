@@ -46,11 +46,9 @@ class _gamesectionState extends State<gamesection> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Quiz()),
-                        );
-                      },
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Quiz()));
+                        },
                       child: Container(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -167,10 +165,8 @@ class _gamesectionState extends State<gamesection> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context)
-                            .pushReplacement(MaterialPageRoute(builder: (_) {
-                          return VideoViewer();
-                        }));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => VideoViewer()));
                       },
                       child: Container(
                         child: Column(

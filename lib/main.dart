@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder>{
           '/landingpage': (BuildContext context) => new MyApp(),
           '/videoviewer': (BuildContext context) => new VideoViewer(),
+          '/quiz': (BuildContext context) => new VideoViewer(),
         },
         home: splash());
   }

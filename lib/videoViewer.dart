@@ -1,3 +1,6 @@
+import 'package:Adhikaar/screens/Navigation.dart';
+import 'package:Adhikaar/services/database.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -11,8 +14,9 @@ class VideoViewer extends StatefulWidget {
 }
 
 class VideoViewerState extends State<VideoViewer> {
-  //
+  String user = FirebaseAuth.instance.currentUser.uid;
   VideoPlayerController _controller;
+  DatabaseService databaseService = new DatabaseService();
   final TextEditingController _userview = TextEditingController();
   Future<void> _initializeVideoPlayerFuture;
 
@@ -79,7 +83,13 @@ class VideoViewerState extends State<VideoViewer> {
                 ),
               ),
               GestureDetector(
-                onTap: () => print("View: ${_userview.text}"),
+                onTap: () {
+                  databaseService.addData({'View':_userview.text, 'UID': user});
+                  print("View: ${_userview.text}");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Navigation()));
+
+                },
                 child: RichText(
                   text: TextSpan(children: [
                     TextSpan(

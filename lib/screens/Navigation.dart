@@ -21,7 +21,7 @@ class _NavigationState extends State<Navigation> {
       child: add(),
     ),
     Center(
-      child: Quiz(),
+      child: gamesection(),
     ),
     Center(
       child: profile(),

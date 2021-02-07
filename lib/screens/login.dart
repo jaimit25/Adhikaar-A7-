@@ -18,14 +18,6 @@ class _loginState extends State<login> {
   @override
   void initState() {
     _passwordVisible = true;
-    getUser();
-
-    if (user != null) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Navigation()));
-    } else {
-      print('user not found');
-    }
   }
 
   @override
@@ -214,6 +206,7 @@ class _loginState extends State<login> {
       ),
     );
   }
+
 
   getUser() async {
     user = FirebaseAuth.instance.currentUser;
