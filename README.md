@@ -6,5 +6,5 @@ which are specially made to Uprise Womens Repect and Dignity. The games are higl
 to get the information regarding the latest schemes launched by government.
 
 
-So For The Technology we Choose are programming Language: Flutter and For Backend We used Firebase Which
+So For The Technology we Choose are programming Language: Flutter framework with dart and For Backend We used Firebase Which
  includes Authentication ,storage, firestore and firebase database.
