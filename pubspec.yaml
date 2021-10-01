@@ -58,14 +58,14 @@ dependencies:
   email_validator: ^1.0.6
   # image_picker: ^0.6.7+17
   permission_handler: ^5.0.1+1
-  image_picker: ^0.6.7+22
+  image_picker: ^0.8.4+2
   random_string: ^2.1.0
   video_player: ^0.10.1
   shared_preferences: ^0.5.6+3
   flutter_spinkit: ^4.1.2+1
   cached_network_image: ^2.2.0+1
   carousel_pro: ^1.0.0
-  carousel_slider: ^3.0.0
+  carousel_slider: ^4.0.0
  
 
 dev_dependencies:
