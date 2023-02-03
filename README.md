@@ -1,8 +1,8 @@
 # Adhikaar
 
-Adhikaar is a Small Quiz game and Socially interactive App Wherein Users can play mind games 
-which are specially made to Uprise Womens Repect and Dignity. The games are higly interactive and user friendly,
- Top Answers are also Displayed on the Leaderboard section which  motivates or attract User. User can use this App 
+Adhikaar is a Small Quiz game and Social Media App Where User's can play games 
+which are specially made to Uprise Women's Repect and Dignity. The games are higly interactive and user friendly,
+ Top Answers are Displayed on the Leaderboard section which  motivates or attract User to play. User's also can use this App 
 to get the information regarding the latest schemes launched by government.
 
 
